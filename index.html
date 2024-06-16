@@ -122,34 +122,8 @@
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate">
-	    					<div class="icon" onclick="togglePopup()">
-        <span class="icon-my_location">📍</span>
-        <div class="popup" id="mapPopup">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.078758163386!2d101.4626744!3d0.4329648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a500b64f8ddb%3A0x60d2239c23f64c82!2sMerindu%20Coffe%20%26%20tea!5e0!3m2!1sen!2sid!4v1686759265146!5m2!1sen!2sid"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-        </div>
-    </div>
+	    					<div class="icon"><span class="icon-my_location"></span></div>
 
-    <script>
-        function togglePopup() {
-            var popup = document.getElementById("mapPopup");
-            popup.style.display = (popup.style.display === "block") ? "none" : "block";
-        }
-
-        // Close the popup if the user clicks outside of it
-        document.addEventListener("click", function(event) {
-            var popup = document.getElementById("mapPopup");
-            var icon = document.querySelector(".icon");
-
-            if (!icon.contains(event.target)) {
-                popup.style.display = "none";
-            }
-        });
-    </script>
 	    					<div class="text">
 	    						<h3>Pandau Permai Street</h3>
 	    						<p>	Pekanbaru, Riau, Indonesia</p>
