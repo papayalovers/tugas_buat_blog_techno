@@ -31,24 +31,26 @@
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Merindu<small>Coffe</small></a>
+	      <a class="navbar-brand" href="index.html">Merindu<small>Coffe</small></a>		          
+	      <a class="navbar-brand" href="index.html">
+            <img src="images/usti.png" alt="USTI Logo" style="height: 60px; filter: brightness(1.2) contrast(1.1);">
+        </a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
+	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="#">Shop</a>
-                <a class="dropdown-item" href="#">Single Product</a>
-                <a class="dropdown-item" href="#">Cart</a>
-                <a class="dropdown-item" href="#">Checkout</a>
+              	<a class="dropdown-item" href="shop.html">Shop</a>
+                <a class="dropdown-item" href="product-single.html">Single Product</a>
+                <a class="dropdown-item" href="cart.html">Cart</a>
+                <a class="dropdown-item" href="checkout.html">Checkout</a>
               </div>
             </li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -122,49 +124,39 @@
 	    					</div>
 	    				</div>
 	    				<div class="col-md-4 d-flex ftco-animate">
-	    					        <div class="icon-map" onclick="togglePopup(event)">
-        <span class="icon-my_location"></span>
-        <div class="popup" id="mapPopup">
-            <iframe
-                src=""
-                id="mapIframe"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-        </div>
-    </div>
-
-    <script>
-        function togglePopup(event) {
-            event.stopPropagation();
-            var popup = document.getElementById("mapPopup");
-            var iframe = document.getElementById("mapIframe");
-
-            if (popup.style.display === "none" || popup.style.display === "") {
-                iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.078758163386!2d101.4626744!3d0.4329648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a500b64f8ddb%3A0x60d2239c23f64c82!2sMerindu%20Coffe%20%26%20tea!5e0!3m2!1sen!2sid!4v1686759265146!5m2!1sen!2sid";
-                popup.style.display = "block";
-            } else {
-                popup.style.display = "none";
-                iframe.src = "";
-            }
-        }
-
-        // Close the popup if the user clicks outside of it
-        document.addEventListener("click", function(event) {
-            var popup = document.getElementById("mapPopup");
-            var icon = document.querySelector(".icon-map");
-
-            if (!icon.contains(event.target)) {
-                popup.style.display = "none";
-                var iframe = document.getElementById("mapIframe");
-                iframe.src = "";
-            }
-        });
-    </script>
-
+	    				<div class="icon"><span class="icon-my_location"></span></div>
 	    					<div class="text">
-	    						<h3>Jl. Pasir Putih Jl. Raya Pandau Permai, Pandau Jaya, Kec. Siak Hulu</h3>
+	    						<h3 class='text-popup' onclick="togglePopup(event)">Jl. Pasir Putih Jl. Raya Pandau Permai, Pandau Jaya, Kec. Siak Hulu</h3>
+	    						    <div id="mapPopup">
+        								<iframe id="mapIframe" frameborder="0" style="border:0" allowfullscreen></iframe>
+    									</div>
+									    <script>
+									        function togglePopup(event) {
+									            event.stopPropagation();
+									            var popup = document.getElementById("mapPopup");
+									            var iframe = document.getElementById("mapIframe");
+
+									            if (popup.style.display === "none" || popup.style.display === "") {
+									                iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.078758163386!2d101.4626744!3d0.4329648!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d5a500b64f8ddb%3A0x60d2239c23f64c82!2sMerindu%20Coffe%20%26%20tea!5e0!3m2!1sen!2sid!4v1686759265146!5m2!1sen!2sid";
+									                popup.style.display = "block";
+									            } else {
+									                popup.style.display = "none";
+									                iframe.src = "";
+									            }
+									        }
+
+									        // Close the popup if the user clicks outside of it
+									        document.addEventListener("click", function(event) {
+									            var popup = document.getElementById("mapPopup");
+
+									            if (!popup.contains(event.target) && !event.target.classList.contains("text-popup")) {
+									                popup.style.display = "none";
+									                var iframe = document.getElementById("mapIframe");
+									                iframe.src = "";
+									            }
+									        });
+									    </script>
+
 	    						<p></p>Pekanbaru, Riau, 28284, Indonesia</p>
 	    					</div>
 	    				</div>
@@ -228,7 +220,7 @@
 	          <h2 class="mb-4">Our Story</h2>
 	        </div>
 	        <div>
-	  				<p>Welcome to Merindu Café, a haven for coffee lovers where each cup tells a unique story. Our journey began with a simple yet profound love for coffee and the desire to create a space where people can experience the true essence of this beloved beverage.</p>
+	  				<p>Welcome to Merindu Coffe, a haven for coffee lovers where each cup tells a unique story. Our journey began with a simple yet profound love for coffee and the desire to create a space where people can experience the true essence of this beloved beverage.</p>
 	  			</div>
   			</div>
     	</div>
@@ -277,7 +269,7 @@
     				<div class="heading-section text-md-right ftco-animate">
 	          	<span class="subheading">Discover</span>
 	            <h2 class="mb-4">Our Menu</h2>
-	            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+	            <p class="mb-4">"Enjoy a variety of unique coffee flavors from us. Each cup is crafted with passion to deliver the perfect taste experience"</p>
 	            <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
 	          </div>
     			</div>
@@ -285,22 +277,22 @@
     				<div class="row">
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/menu-1-vallate.jpg);"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/menu-2-aren.jpg);"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry">
-		    					<a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/menu-3-caramel.jpg);"></a>
 		    				</div>
     					</div>
     					<div class="col-md-6">
     						<div class="menu-entry mt-lg-4">
-		    					<a href="#" class="img" style="background-image: url(images/menu-4.jpg);"></a>
+		    					<a href="#" class="img" style="background-image: url(images/menu-4-vanilmilk.jpg);"></a>
 		    				</div>
     					</div>
     				</div>
@@ -363,50 +355,50 @@
           <div class="col-md-7 heading-section ftco-animate text-center">
           	<span class="subheading">Discover</span>
             <h2 class="mb-4">Best Coffee Sellers</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p>Try the delicious taste of our best selling coffee</p>
           </div>
         </div>
         <div class="row">
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
+    					<a href="#" class="img" style="background-image: url(images/menu-1-vallate.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Rp. 15.000</span></p>
+    						<h3><a href="#">Vanilla Late</a></h3>
+    						<p>Available hot or cold</p>
+    						<p class="price"><span>Rp 15.000</span></p>
     						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
         	</div>
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
+    					<a href="#" class="img" style="background-image: url(images/menu-2-aren.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Rp. 15.000</span></p>
+    						<h3><a href="#">Palm Sugar Coffe Milk </a></h3>
+    						<p>Available hot or cold</p>
+    						<p class="price"><span>Rp 15.000</span></p>
     						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
         	</div>
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
+    					<a href="#" class="img" style="background-image: url(images/menu-3-caramel.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Rp. 15.000</span></p>
+    						<h3><a href="#">Caramel Latte</a></h3>
+    						<p>Available hot or cold</p>
+    						<p class="price"><span>Rp 15.000</span></p>
     						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
         	</div>
         	<div class="col-md-3">
         		<div class="menu-entry">
-    					<a href="#" class="img" style="background-image: url(images/menu-4.jpg);"></a>
+    					<a href="#" class="img" style="background-image: url(images/menu-4-vanilmilk.jpg);"></a>
     					<div class="text text-center pt-4">
-    						<h3><a href="#">Coffee Capuccino</a></h3>
-    						<p>A small river named Duden flows by their place and supplies</p>
-    						<p class="price"><span>Rp. 15.000</span></p>
+    						<h3><a href="#">Vanilla Milkshake</a></h3>
+    						<p>Available hot or cold</p>
+    						<p class="price"><span>Rp 15.000</span></p>
     						<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
     					</div>
     				</div>
@@ -414,152 +406,6 @@
         </div>
     	</div>
     </section>
-		<section class="ftco-menu">
-    	<div class="container">
-    		<div class="row justify-content-center mb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Discover</span>
-            <h2 class="mb-4">Our Products</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
-    		<div class="row d-md-flex">
-	    		<div class="col-lg-12 ftco-animate p-md-5">
-		    		<div class="row">
-		          <div class="col-md-12 nav-link-wrap mb-5">
-		            <div class="nav ftco-animate nav-pills justify-content-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-		              <a class="nav-link active" id="v-pills-1-tab" data-toggle="pill" href="#v-pills-1" role="tab" aria-controls="v-pills-1" aria-selected="true">Main Dish</a>
-
-		              <a class="nav-link" id="v-pills-2-tab" data-toggle="pill" href="#v-pills-2" role="tab" aria-controls="v-pills-2" aria-selected="false">Drinks</a>
-
-		              <a class="nav-link" id="v-pills-3-tab" data-toggle="pill" href="#v-pills-3" role="tab" aria-controls="v-pills-3" aria-selected="false">Desserts</a>
-		            </div>
-		          </div>
-		          <div class="col-md-12 d-flex align-items-center">
-		            
-		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
-
-		              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
-		              	<div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Grilled Beef</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Grilled Beef</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dish-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Grilled Beef</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-2" role="tabpanel" aria-labelledby="v-pills-2-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Lemonade Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Pineapple Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Soda Drinks</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-
-		              <div class="tab-pane fade" id="v-pills-3" role="tabpanel" aria-labelledby="v-pills-3-tab">
-		                <div class="row">
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-1.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Hot Cake Honey</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-2.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Hot Cake Honey</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/dessert-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Hot Cake Honey</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>Rp. 35.000</span></p>
-		              					<p><a href="#" class="btn btn-primary btn-outline-primary">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
-		              	</div>
-		              </div>
-		            </div>
-		          </div>
-		        </div>
-		      </div>
-		    </div>
-    	</div>
-    </section>
-
     <section class="ftco-section img" id="ftco-testimony" style="background-image: url(images/bg_1.jpg);"  data-stellar-background-ratio="0.5">
     	<div class="overlay"></div>
 	    <div class="container">
@@ -579,61 +425,61 @@
 	              </blockquote>
 	              <div class="author d-flex mt-4">
 	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_1.jpg" alt="">
+	                  <img src="images/teguh.jpg" alt="">
 	                </div>
-	                <div class="name align-self-center">Teguh <span class="position">Illustrator Designer</span></div>
+	                <div class="name align-self-center">Teguh</div>
 	              </div>
 	          </div>
 	        </div>
 	        <div class="col-lg align-self-sm-end">
 	          <div class="testimony overlay">
 	             <blockquote>
-	                <p>&ldquo;Pengirimannya cepat, kopinya juga terasa nikmat. Mantap!&rdquo;</p>
+	                <p>&ldquo;Saya rasa kopinya kurang enak, tapi kenapa viewersnya rata-rata positif ya? apa lidahku yang salah? tapi next order lagi deh, tenkyu merindu cafe.&rdquo;</p>
 	              </blockquote>
 	              <div class="author d-flex mt-4">
 	                <div class="image mr-3 align-self-center">
 	                  <img src="images/person_2.jpg" alt="">
 	                </div>
-	                <div class="name align-self-center">Vito Rezki <span class="position">Illustrator Designer</span></div>
+	                <div class="name align-self-center">Vito Rezki</div>
 	              </div>
 	          </div>
 	        </div>
 	        <div class="col-lg align-self-sm-end ftco-animate">
 	          <div class="testimony">
 	             <blockquote>
-	                <p>&ldquo;Pengirimannya cepat, kopinya juga terasa nikmat. Mantap! &rdquo;</p>
+	                <p>&ldquo;Hmm, cukup enak dibanding kopi lainnya.&rdquo;</p>
 	              </blockquote>
 	              <div class="author d-flex mt-4">
 	                <div class="image mr-3 align-self-center">
 	                  <img src="images/person_3.jpg" alt="">
 	                </div>
-	                <div class="name align-self-center">Rapel Aprilius <span class="position">Illustrator Designer</span></div>
+	                <div class="name align-self-center">Rapel Aprilius</div>
 	              </div>
 	          </div>
 	        </div>
 	        <div class="col-lg align-self-sm-end">
 	          <div class="testimony overlay">
 	             <blockquote>
-	                <p>&ldquo;Pengirimannya cepat, kopinya juga terasa nikmat. Mantap!&rdquo;</p>
+	                <p>&ldquo;Wahhhhhhhhh, kopinya muantep pollll. kapan-kapan kesini lagi dehhhh! merindu cafe emang cakep!&rdquo;</p>
 	              </blockquote>
 	              <div class="author d-flex mt-4">
 	                <div class="image mr-3 align-self-center">
-	                  <img src="images/person_2.jpg" alt="">
+	                  <img src="images/teguh.jpg" alt="">
 	                </div>
-	                <div class="name align-self-center">Teguh <span class="position">Illustrator Designer</span></div>
+	                <div class="name align-self-center">Teguh</div>
 	              </div>
 	          </div>
 	        </div>
 	        <div class="col-lg align-self-sm-end ftco-animate">
 	          <div class="testimony">
 	            <blockquote>
-	              <p>&ldquo;Pengirimannya cepat, kopinya juga terasa nikmat. Mantap! &rdquo;</p>
+	              <p>&ldquo;Oke sih, rasanya juga enak kopinya kental banget. Besok order disini lagi deh! ckckckckckc &rdquo;</p>
 	            </blockquote>
 	            <div class="author d-flex mt-4">
 	              <div class="image mr-3 align-self-center">
 	                <img src="images/person_3.jpg" alt="">
 	              </div>
-	              <div class="name align-self-center">Sang Adji <span class="position">Illustrator Designer</span></div>
+	              <div class="name align-self-center">Sang Adji</div>
 	            </div>
 	          </div>
 	        </div>
@@ -648,7 +494,7 @@
           <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>Merindu Coffe Official</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -660,7 +506,7 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">Recent Blog</h2>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url(images/image_5.jpg);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
                   <div class="meta">
@@ -671,7 +517,7 @@
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
                 <div class="text">
                   <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
                   <div class="meta">
