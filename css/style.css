@@ -7838,6 +7838,12 @@ h1, h2, h3, h4, h5,
       padding: 40px;
       background: rgba(0, 0, 0, 0.5); } }
 
+.image-promote {
+    width: 350px; /* Lebar gambar */
+    height: 400px; /* Tinggi gambar */
+    object-fit: cover; /* Memastikan gambar terisi penuh */
+}
+
 .ftco-services {
   color: #1d150b;
   background: #c49b63; }
